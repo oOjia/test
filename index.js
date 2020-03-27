@@ -69,7 +69,7 @@ function upload() {
             ctx.drawImage(right, 268, 1500);
         }
     }else{
-        alert(1)
+        alert("填写信息不完整")
     }
     
  }

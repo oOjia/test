@@ -1,0 +1,366 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: 100%;
+}
+body {
+    font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.28rem;
+    height: 100%;
+    background: url(../img/zb/background.png) repeat-y;
+    background-size: 100% 100%;
+}
+input, select, option, button, textarea {
+    background: linear-gradient(to bottom, #fff, #fff);
+    -webkit-background: linear-gradient(to bottom, #fff, #fff);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    outline: none;
+    font-family: "Avenir Next", Avenir, "Helvetica Neue", "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    border-radius: 0.02rem;
+}
+img {
+    border: none;
+}
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+}
+ul li {
+    list-style-type: none;
+}
+.f-fl{
+  float: left;
+}
+.f-fr{
+  float: right;
+}
+/*页面样式*/
+
+.wrapper{
+  position: relative;
+  color: #333;
+  height: 100%;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.hide{
+  display: none;
+}
+.bg img{
+  position: absolute;
+}
+.circle{
+  width: 7.5rem;
+  top: 12%;
+}
+.tangle{
+  width: 7.5rem;
+  top: -8%;
+}
+.bg2{
+  width: 7.5rem;
+  top: -8%;
+}
+.bg3{
+  width: 7.5rem;
+  bottom: 0;
+}
+.earth{
+  width: 7.5rem;
+  margin-left: -3.75rem;
+  left: 50%;
+  bottom: -20%;
+}
+
+.words{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.4rem;
+}
+.words img{
+  width: 0.15rem;
+  vertical-align: middle;
+}
+.words p{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.15rem;
+  font-size: 0.26rem;
+  letter-spacing: 0.04rem;
+  color: #999;
+}
+.text{
+  position: relative;
+  padding-top: 1rem;
+}
+.text p{
+  margin: auto;
+  text-align: center;
+  font-size: 0.36rem;
+  letter-spacing: 0.1rem;
+  line-height: 1rem;
+}
+.text .textBottom{
+  margin-top: 0.6rem;
+}
+.similar{
+  background: url('../img/zb/text_bg.png') no-repeat;
+  background-size: 1.55rem 1rem;
+  background-position: 2.2rem 0;
+}
+
+.text .rare, .text .lonelyStar{
+  position: relative;
+}
+.text .yellow {
+  position: relative;
+  display: inline-block;
+  z-index: -1;
+  background: #ffec81;
+}
+.lonelyStar .yellow {
+  top: 0.15rem;
+  left: -0.9rem;
+  width: 1.1rem;
+  height: 0.42rem;
+  margin-right: -1.1rem;
+}
+
+.rare .yellow{
+  top: 0.2rem;
+  left: -2.4rem;
+  width: 2rem;
+  height: 0.45rem;
+  margin-right: -2rem;
+}
+
+
+.start{
+  position: relative;
+  height: 100%;
+  background: url(../img/zb/start_bg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.arrow{
+  display: block;
+  width: 0.4rem;
+  margin: 0 auto;
+  margin-bottom: 0.4rem;
+}
+#startButton{
+  display: block;
+  width: 4rem;
+  height: 1.2rem;
+  border: none;
+  font-size: 0.32rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  background: url(../img/zb/start_btn.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  margin-left: -2rem;
+  cursor: pointer;
+}
+#btnBorder{
+  display: block;
+  position: relative;
+  top: -0.84rem;
+  left: -0.04rem;
+  width: 2.98rem;
+  height: 0.78rem;
+  margin: 0 auto;
+  border: 0.01rem solid #333;
+}
+
+.question{
+  position: relative;
+  background: url(../img/zb/question_top.png) no-repeat;
+  background-size: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.question .list{
+  display: flex;
+  width: 600%;
+}
+
+.question .list-item {
+  display: none;
+  width: 16.66%;
+  padding-top: 2.7rem;
+}
+
+.question .list-item:first-child {
+  display: block;
+}
+
+.question .title{
+  color: #fff;
+  font-size: 0.5rem;
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+}
+
+.question .options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 5rem;
+  padding:0 0.4rem;
+}
+.option {
+  height: 1.5rem;
+  color: #304897;
+  font-size: 0.4rem;
+  padding-top: 4.4%;
+  padding-left: 7.7%;
+  background: url(../img/zb/option.png) no-repeat;
+  background-size: 100%;
+}
+
+.question .option span{
+  padding-right: 0.3rem;
+  color: #fff;
+}
+
+.checked{
+  background: url(../img/zb/checked.png?12) no-repeat;
+  background-size: 100%;
+  color: #fff;
+}
+.resultImg{
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+.buttons{
+  width: 90%;
+  margin: auto;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+.focus a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.result button{
+  width: 48%;
+  border: none;
+  height: 1rem;
+  margin-top: 0.15rem;
+  background-size: 100% 100%;
+  font-size: 0.3rem;
+}
+.result p{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.result .onceMore{
+  color: #f5073e;
+  margin-bottom: 0.2rem;
+}
+.share{
+  color: #fff;
+  background: url(../img/yf/share.png?12) no-repeat;
+}
+.focus{
+  margin-bottom: 0.3rem;
+  color: #fa294e;
+  background: url(../img/yf/focus.png?12) no-repeat;
+}
+/* canvas{
+  width: 383px;
+  height: 533px;
+  margin: auto;
+  display: block;
+} */
+#save_img{
+  width: 90%;
+  height: 60%;
+  margin: auto;
+  display: block;
+  padding-top: 0.3rem;
+}
+
+.loading {
+  height: 100%;
+  background: url(../img/zb/background.png) repeat-y;
+  background-size: 100% 100%;
+}
+.loading .desc {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 6rem;
+  margin-left: -3rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.32rem;
+  letter-spacing: 0.02rem;
+}
+.loading .icon {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 4rem;
+  margin-left: -2rem;
+}
+
+.loading .base {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 0.5rem;
+  margin-left: -0.25rem;
+  -webkit-animation-name: loading-base;
+  animation-name: loading-base;
+}
+.cover{
+  position: absolute;
+  top: 0;
+  height: 120%;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+}
+.cover img{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.2rem;
+  width: 7.5rem;
+  
+}
+.answer {
+  min-height: 100%;
+}
+.answer .result img, .answer .logo img{
+  width: 100%;
+}
+

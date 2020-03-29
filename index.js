@@ -129,6 +129,9 @@ function drawToCanvas(imgData){
     let left = document.getElementById("left");
     let right = document.getElementById("right");
 
+    let txt = document.getElementById("txt");
+    let info = document.getElementsByClassName("info")[0];
+
     let name = document.getElementById("name").value;
     let school = document.getElementById("school").value;
     let second = document.getElementById("second").value||"";
@@ -143,6 +146,10 @@ function drawToCanvas(imgData){
         left.crossOrigin="anonymous";
         right.crossOrigin="anonymous";
         img.src = imgData;
+
+        addClass(info,"hiden");
+        removeClass(txt,"hiden");
+        
         img.onload = function(){//必须onload之后再画
             // ctx.drawImage(img,0,0,300,400);
             ctx.drawImage(bg, 0, 0, 1080, 1920);
@@ -170,3 +177,17 @@ function drawToCanvas(imgData){
             saveImage.src = strDataURI;
         }
 }
+
+function addClass(obj, cls){
+    var obj_class = obj.className,//获取 class 内容.
+    blank = (obj_class != '') ? ' ' : '';//判断获取到的 class 是否为空, 如果不为空在前面加个'空格'.
+    added = obj_class + blank + cls;//组合原来的 class 和需要添加的 class.
+    obj.className = added;//替换原来的 class.
+  }
+  function removeClass(obj, cls){
+    var obj_class = ' '+obj.className+' ';//获取 class 内容, 并在首尾各加一个空格. ex) 'abc    bcd' -> ' abc    bcd '
+    obj_class = obj_class.replace(/(\s+)/gi, ' '),//将多余的空字符替换成一个空格. ex) ' abc    bcd ' -> ' abc bcd '
+    removed = obj_class.replace(' '+cls+' ', ' ');//在原来的 class 替换掉首尾加了空格的 class. ex) ' abc bcd ' -> 'bcd '
+    removed = removed.replace(/(^\s+)|(\s+$)/g, '');//去掉首尾空格. ex) 'bcd ' -> 'bcd'
+    obj.className = removed;//替换原来的 class.
+  }

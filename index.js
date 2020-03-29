@@ -1,4 +1,12 @@
 let image = new Image();
+// let bg = new Image();
+// let btn = new Image();
+// let left = new Image();
+// let right = new Image();
+// bg.src = "./img/bg.png";
+// left.src = "./img/left.png";
+// right.src = "./img/right.png";
+// btn.src = "./img/btn.png";  
 function upload() {
     // ctx.drawImage(bg, 0, 0, 300, 500)
 
@@ -30,11 +38,16 @@ function upload() {
   }
   
  function paintBg(){
+    let img = document.getElementById("save_img");
     let bg = new Image();
     let btn = new Image();
     let left = new Image();
     let right = new Image();
-    let img = document.getElementById("save_img");
+    bg.src = "bg.png";
+    left.src = "left.png";
+    right.src = "right.png";
+    btn.src = "btn.png";  
+    
     let name = document.getElementById("name").value;
     let school = document.getElementById("school").value;
     let second = document.getElementById("second").value||"";
@@ -42,10 +55,6 @@ function upload() {
     let rant = document.getElementById("rant").value;
     let canvas = document.getElementById("resultCanvas"); 
     let ctx = canvas.getContext("2d");
-    bg.src = "./img/bg.png";
-    left.src = "./img/left.png";
-    right.src = "./img/right.png";
-    btn.src = "./img/btn.png";  
     // if(name&&school&&degree&&rant){
         bg.onload = function(){
             ctx.clearRect(0,0,1080,1920);
@@ -113,26 +122,48 @@ function readFile(){
 }
 
 function drawToCanvas(imgData){
+    let saveImage = document.getElementById("save_img");
+    let bg = document.getElementById("bg");
+    let btn = document.getElementById("btn");
+    let left = document.getElementById("left");
+    let right = document.getElementById("right");
+
+    let name = document.getElementById("name").value;
+    let school = document.getElementById("school").value;
+    let second = document.getElementById("second").value||"";
+    let degree = document.getElementById("degree").value;
+    let rant = document.getElementById("rant").value;
     var cvs = document.querySelector('#resultCanvas');
-        cvs.width=300;
-        cvs.height=400;
-        var ctx = cvs.getContext('2d');
-        let showImage = document.getElementById("save_img");
-        var img = new Image;
-            img.src = imgData;
-            // img.onload = function(){//必须onload之后再画
-            //     ctx.drawImage(image,0,0,image.width,650,135,970,800,650); 
-            //     // let tempSrc = canvas.toDataURL("image/png");
-            //     setTimeout(() => {   
-            //         strDataURI = cvs.toDataURL();//获取canvas base64数据
-            //         showImage.src = strDataURI;
-            //     }, 1000);
-            // }
-            img.addEventListener('load' , function(){
-                ctx.drawImage(image,0,0,image.width,650,135,970,800,650); 
-                setTimeout(() => {   
-                    strDataURI = cvs.toDataURL();//获取canvas base64数据
-                    showImage.src = strDataURI;
-                }, 1000);
-              } , false);
+    var ctx = cvs.getContext('2d');
+    var img = new Image;
+        img.crossOrigin="anonymous";
+        bg.crossOrigin="anonymous";
+        btn.crossOrigin="anonymous";
+        left.crossOrigin="anonymous";
+        right.crossOrigin="anonymous";
+        img.src = imgData;
+        img.onload = function(){//必须onload之后再画
+            // ctx.drawImage(img,0,0,300,400);
+            ctx.drawImage(bg, 0, 0, 1080, 1920);
+            ctx.drawImage(btn, 299, 525);
+            ctx.drawImage(img,0,0,img.width,650,135,970,800,650);
+            ctx.fillStyle="#000000";
+            ctx.font = 'bold 57px Adobe Ming Std';
+            ctx.fillText(`2020录取捷报`, 358,603);
+            ctx.font = 'bold 50px Adobe Ming Std';
+            ctx.fillText(`益文${name}同学`, 125, 743)
+            ctx.fillText(`${school}`, 730, 743)
+            ctx.font = 'bold 40px Adobe Ming Std';
+            ctx.fillText(`背景: ${degree}`, 125, 843)
+            ctx.fillText(`2020 QS`, 480, 843)
+            ctx.fillText(`世界大学排名`, 480, 893)
+            ctx.fillText(second, 125, 893)
+            ctx.font = 'bold 70px Adobe Ming Std';
+            ctx.fillStyle="#B61D1C";
+            ctx.fillText(rant, 797, 873)
+            ctx.font = 'bold 50px Adobe Ming Std';
+            ctx.fillText(`录取学校: `, 480, 743)
+            strDataURI = cvs.toDataURL();//获取canvas base64数据
+            saveImage.src = strDataURI;
+        }
 }

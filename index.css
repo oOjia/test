@@ -134,6 +134,9 @@ input{
 /* #resultCanvas{
   display: none;
 } */
+.hiden{
+  display: none;
+}
 .over{
   color: #727272;
   font-size: 0.2rem;

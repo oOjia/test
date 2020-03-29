@@ -1,15 +1,5 @@
 let image = new Image();
-// let bg = new Image();
-// let btn = new Image();
-// let left = new Image();
-// let right = new Image();
-// bg.src = "./img/bg.png";
-// left.src = "./img/left.png";
-// right.src = "./img/right.png";
-// btn.src = "./img/btn.png";  
 function upload() {
-    // ctx.drawImage(bg, 0, 0, 300, 500)
-
 	let file = document.querySelector('input[type=file]').files[0]  // 获取选择的文件，这里是图片类型
 	let reader = new FileReader()
         reader.readAsDataURL(file) //读取文件并将文件以URL的形式保存在resulr属性中 base64格式
@@ -17,7 +7,6 @@ function upload() {
             let result = e.target.result // base64格式图片地址 
             image.crossOrigin = '';
             image.src = result // 设置image的地址为base64的地址 
-            
        }
  }
  function makeImg(canvas) {
@@ -101,12 +90,22 @@ let imageData;
     return img;
 }
 function doInput(id){
-    var inputObj = document.createElement('input');
-    inputObj.addEventListener('change',readFile,false);
-    inputObj.type = 'file';
-    inputObj.accept = 'image/*';
-    inputObj.id = id;
-    inputObj.click();
+    let name = document.getElementById("name").value;
+    let school = document.getElementById("school").value;
+    let second = document.getElementById("second").value||"";
+    let degree = document.getElementById("degree").value;
+    let rant = document.getElementById("rant").value;
+    if(name&&school&&degree&&rant){
+        var inputObj = document.getElementById('ipt');
+        // var inputObj = document.createElement('input');
+        inputObj.addEventListener('change',readFile,false);
+        inputObj.type = 'file';
+        inputObj.accept = 'image/*';
+        inputObj.id = id;
+        inputObj.click();
+    }else{
+        alert("填写信息不完整")
+    }
 }
 function readFile(){
     var file = this.files[0];//获取input输入的图片
@@ -149,9 +148,10 @@ function drawToCanvas(imgData){
 
         addClass(info,"hiden");
         removeClass(txt,"hiden");
-        
+
         img.onload = function(){//必须onload之后再画
             // ctx.drawImage(img,0,0,300,400);
+            ctx.clearRect(0,0,1080,1920);
             ctx.drawImage(bg, 0, 0, 1080, 1920);
             ctx.drawImage(btn, 299, 525);
             ctx.drawImage(img,0,0,img.width,650,135,970,800,650);

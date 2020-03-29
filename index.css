@@ -157,7 +157,6 @@ input{
     color: #1E88C7;
     text-decoration: none;
     text-indent: 0;
-    line-height: 20px;
 }
 .file input {
     position: absolute;
@@ -165,12 +164,6 @@ input{
     right: 0;
     top: 0;
     opacity: 0;
-}
-.file:hover {
-    background: #AADFFD;
-    border-color: #78C3F3;
-    color: #004974;
-    text-decoration: none;
 }
 .start{
     display: block;

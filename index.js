@@ -133,6 +133,7 @@ function drawToCanvas(imgData){
     let second = document.getElementById("second").value||"";
     let degree = document.getElementById("degree").value;
     let rant = document.getElementById("rant").value;
+    document.getElementById("resultCanvas").style.display = "block";
     var cvs = document.querySelector('#resultCanvas');
     var ctx = cvs.getContext('2d');
     var img = new Image;

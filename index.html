@@ -10,7 +10,6 @@
 
 </head>
 <body>
-    <div onclick="doInput()">do</div>
     <div class="info">
         <p class="title">请输入offer信息</p>
         <li>
@@ -33,15 +32,16 @@
         </li>
         <p>上传offer图片</p>
 
+        <a href="javascript:;"  class="file" onclick="doInput()">选择文件</a>
         <!-- <a href="javascript:;" class="file">选择文件
             <input type="file" name="" id="upload" onchange="upload()">
         </a> -->
-        <input type="file" accept="image/*" name="" id="" onchange="upload()">
-        <br>
-        <input type="button" class="start" value="开始绘制" onclick="paintBg()">
+        <!-- <input type="file" accept="image/*" name="" id="" onchange="readFile()"> -->
+        <!-- <br> -->
+        <!-- <input type="button" class="start" value="开始绘制" onclick="paintBg()"> -->
     </div>
-    <canvas class="hiden" id="resultCanvas" width="1080" height="1920"></canvas>
-    <img class="hiden" src="" id="save_img"/>
+    <canvas id="resultCanvas" width="1080" height="1920">预览区</canvas>
+    <img src="" id="save_img"/>
     <div class="hiden">
         <img id="bg" src="./img/bg.png" alt="">
         <img id="btn" src="./img/btn.png" alt="">

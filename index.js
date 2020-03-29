@@ -89,7 +89,7 @@ function upload() {
  }
 
 
-
+let imageData;
  function loadImage(src, callback) {
     var img = new Image();
 
@@ -118,6 +118,7 @@ function readFile(){
     reader.readAsDataURL(file);//转化成base64数据类型
     reader.onload = function(e){
             drawToCanvas(this.result);
+            // imageData = this.result
         }
 }
 
@@ -133,7 +134,6 @@ function drawToCanvas(imgData){
     let second = document.getElementById("second").value||"";
     let degree = document.getElementById("degree").value;
     let rant = document.getElementById("rant").value;
-    document.getElementById("resultCanvas").style.display = "block";
     var cvs = document.querySelector('#resultCanvas');
     var ctx = cvs.getContext('2d');
     var img = new Image;
@@ -164,6 +164,8 @@ function drawToCanvas(imgData){
             ctx.fillText(rant, 797, 873)
             ctx.font = 'bold 50px Adobe Ming Std';
             ctx.fillText(`录取学校: `, 480, 743)
+            ctx.drawImage(left, 66, 1500);
+            ctx.drawImage(right, 268, 1500);
             strDataURI = cvs.toDataURL();//获取canvas base64数据
             saveImage.src = strDataURI;
         }

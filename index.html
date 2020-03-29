@@ -10,25 +10,38 @@
 
 </head>
 <body>
+    <div onclick="doInput()">do</div>
     <div class="info">
-        <p>请输入offer信息</p>
+        <p class="title">请输入offer信息</p>
         <li>
-            <span>用户姓名缩写</span><input id="name" type="text">
+            <p>用户姓名缩写</p>
+            <input id="name" type="text">
         </li>
         <li>
-            <span>录取学校</span><input id="school" type="text">
+            <p>录取学校</p>
+            <input id="school" type="text">
         </li>
         <li>
-            <span>学生背景</span><input id="nation" type="text" placeholder="国家"><input id="degree" type="text" placeholder="学历相关">
+            <p>学生背景</p>
+            <input id="degree" type="text" placeholder="学历相关">
+            <p class="over">超过6个字的部分请在下个输入框内输入</p>
+            <input id="second" type="text" placeholder="选填">
         </li>
         <li>
-            <span>大学排名</span><input id="rant" type="text">
+            <p>大学排名</p>
+            <input id="rant" type="text">
         </li>
         <p>上传offer图片</p>
+
+        <!-- <a href="javascript:;" class="file">选择文件
+            <input type="file" name="" id="upload" onchange="upload()">
+        </a> -->
         <input type="file" accept="image/*" name="" id="" onchange="upload()">
-        <input type="button" class="btn" value="开始绘制" onclick="paintBg()">
+        <br>
+        <input type="button" class="start" value="开始绘制" onclick="paintBg()">
     </div>
     <canvas id="resultCanvas" width="1080" height="1920"></canvas>
+    <img src="" id="save_img"/>
     <script src="./index.js"></script>
 </body>
 </html>

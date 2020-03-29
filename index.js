@@ -127,6 +127,7 @@ function drawToCanvas(imgData){
     let btn = document.getElementById("btn");
     let left = document.getElementById("left");
     let right = document.getElementById("right");
+    let logo = document.getElementById("logo");
 
     let txt = document.getElementById("txt");
     let info = document.getElementsByClassName("info")[0];
@@ -171,6 +172,7 @@ function drawToCanvas(imgData){
             ctx.fillText(rant, 797, 873)
             ctx.font = 'bold 50px Adobe Ming Std';
             ctx.fillText(`录取学校: `, 480, 743)
+            ctx.drawImage(logo, 280, 980,520,500);
             ctx.drawImage(left, 66, 1500);
             ctx.drawImage(right, 268, 1500);
             strDataURI = cvs.toDataURL();//获取canvas base64数据

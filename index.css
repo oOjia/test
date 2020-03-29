@@ -131,9 +131,9 @@ input{
     font-weight: 700;
     font-family: "Microsoft soft";
 }
-/* #resultCanvas{
-  display: none;
-} */
+#resultCanvas,#save_img{
+  margin: auto;
+}
 .hiden{
   display: none;
 }
